@@ -25,5 +25,5 @@ def contact(request):
 
 
 def pageNotFound(request, exception):
-#    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
-    return redirect('home', permanent=True)
+    # return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+   return redirect('home', permanent=True)
