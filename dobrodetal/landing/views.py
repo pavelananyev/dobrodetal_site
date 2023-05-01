@@ -12,12 +12,13 @@ def getout(request):
         print(out)
     return out
 
-
+menu = ['Продукция', '']
 # Create your views here.
 def main(request):
-    gout = getout(request)
-    return HttpResponse(f'Поставка запчастей для сельхозтехники' + bool(gout) * f'<p>GET запрос:</p><p>{gout}</p>')
+    return render(request, 'landing/main.html', {'title': "Главная страница"})
 
+def new(request):
+    return render(request, 'landing/new.html', {'title': "Новая страница"})
 
 def contact(request):
     gout = getout(request)
