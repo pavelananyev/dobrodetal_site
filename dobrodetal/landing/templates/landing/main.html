@@ -3,4 +3,21 @@
 {% block content %}
 <h1>{{ title }}</h1>
 <p>Содержимое главной страницы</p>
+<ul>
+    {% for d in details %}
+    {% if d.available and d.is_published %}
+    <li>
+        <h2>{{d.title}}</h2>
+        <p>Артикул: {{d.article}}</p>
+        <p><strong>Описание:</strong></p>
+        <p>{{ d.description|linebreaks|truncatewords:35 }}</p>
+        <div class="clear"></div>
+        <p class="link-read-post"><a href="#">Подробнее</a></p>
+        <p><strong>Стоимость: {{d.price}} р.</strong></p>
+        <p><button>В корзину</button></p>
+        <hr>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 {% endblock %}

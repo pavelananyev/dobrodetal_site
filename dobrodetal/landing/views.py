@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 
+from .models import *
 
 def getout(request):
     out = ''
@@ -12,13 +13,14 @@ def getout(request):
         print(out)
     return out
 
-menu = ['Продукция', '']
+menu = ['Продукция', 'Преимущества', 'О нас', 'Заказать', 'Отзывы', 'Контакты']
 # Create your views here.
 def main(request):
-    return render(request, 'landing/main.html', {'title': "Главная страница"})
+    details = Detail.objects.all()
+    return render(request, 'landing/main.html', {'details': details, 'menu': menu, 'title': "Главная страница"})
 
 def new(request):
-    return render(request, 'landing/new.html', {'title': "Новая страница"})
+    return render(request, 'landing/new.html', {'menu': menu, 'title': "Новая страница"})
 
 def contact(request):
     gout = getout(request)
