@@ -1,7 +1,10 @@
 from django.db import models
 
+
 def photos_directory(instance, filename):
     return f'/photos/{instance.article}/{filename}'
+
+
 class Detail(models.Model):
     title = models.CharField(max_length=255)
     article = models.CharField(max_length=255, blank=True)

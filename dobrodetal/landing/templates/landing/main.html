@@ -1,23 +1,27 @@
 {% extends 'landing/base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<p>Содержимое главной страницы</p>
-<ul>
+<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom" id="catalog">Каталог</h2>
+
     {% for d in details %}
     {% if d.available and d.is_published %}
-    <li>
-        <h2>{{d.title}}</h2>
-        <p>Артикул: {{d.article}}</p>
-        <p><strong>Описание:</strong></p>
-        <p>{{ d.description|linebreaks|truncatewords:35 }}</p>
-        <div class="clear"></div>
-        <p class="link-read-post"><a href="#">Подробнее</a></p>
-        <p><strong>Стоимость: {{d.price}} р.</strong></p>
-        <p><button>В корзину</button></p>
-        <hr>
-    </li>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card text-center" style="width: 18rem;">
+                <img src="{% static d.photo %}" class="card-img-top" alt="{{d.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{d.title}}</h5>
+                    <p class="card-text"><small class="text-muted">Артикул: {{d.article}}</small></p>
+                    <p class="card-text">{{d.description|truncatewords:10}}</p>
+                    <p class="link-read-post"><a href="#">Подробнее</a></p>
+                    <p><strong>Стоимость: {{d.price}} р.</strong></p>
+                    <button type="button" class="btn btn-primary btn-lg">&nbsp&nbspВ корзину&nbsp&nbsp</button>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endif %}
     {% endfor %}
-</ul>
 {% endblock %}
