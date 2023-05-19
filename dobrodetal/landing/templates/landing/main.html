@@ -2,13 +2,12 @@
 {% load static %}
 
 {% block content %}
-<div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom" id="catalog">Каталог</h2>
-
+<div class="container px-4 py-5">
+    <h1 class="pb-2 border-bottom" id="catalog">Каталог</h1>
+    <div class="row">
     {% for d in details %}
     {% if d.available and d.is_published %}
-    <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card text-center" style="width: 18rem;">
                 <img src="{% static d.photo %}" class="card-img-top" alt="{{d.title}}">
                 <div class="card-body">
@@ -21,7 +20,8 @@
                 </div>
             </div>
         </div>
-    </div>
     {% endif %}
     {% endfor %}
+    </div>
+
 {% endblock %}
