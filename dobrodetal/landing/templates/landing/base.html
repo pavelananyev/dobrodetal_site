@@ -32,13 +32,13 @@
                     {% for m in menu %}
                     {% if m.id == 1 %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#{{m.slag}}">{{m.name}}
+                        <a class="nav-link active" aria-current="page" href="{{m.slag}}">{{m.name}}
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#{{m.slag}}">{{m.name}}</a>
+                        <a class="nav-link" aria-current="page" href="{{m.slag}}">{{m.name}}</a>
                     </li>
                     {% endif %}
                     {% endfor %}
@@ -60,13 +60,6 @@
 </header>
 {% block content %}
 {% endblock %}
-<!--<footer className="contrast-footer footer-dark footer-shadow-dark p-5">-->
-<!--      <div className="container d-flex flex-column">-->
-<!--        <small className="text-center mt-5 footer-copyright">-->
-<!--          &copy; Добродеталь, 2023. All rights reserved.-->
-<!--        </small>-->
-<!--      </div>-->
-<!--</footer>-->
 <div class="blockcode">
   <footer class="shadow">
     <div

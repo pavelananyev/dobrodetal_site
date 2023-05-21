@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block content %}
-<div class="container px-4 py-5">
-    <h1 class="pb-2 border-bottom" id="catalog">Каталог</h1>
-    <div class="row">
+<div class="container px-4 py-5" id="catalog">
+    <h1 class="pb-2 border-bottom">Каталог</h1>
+    <div class="row gx-5">
     {% for d in details %}
     {% if d.available and d.is_published %}
-        <div class="col-sm-4">
-            <div class="card text-center" style="width: 18rem;">
+        <div class="col-sm-3">
+            <div class="card" style="width: 16rem;">
                 <img src="{% static d.photo %}" class="card-img-top" alt="{{d.title}}">
                 <div class="card-body">
-                    <h5 class="card-title">{{d.title}}</h5>
+                    <h6 class="card-title">{{d.title}}</h6>
                     <p class="card-text"><small class="text-muted">Артикул: {{d.article}}</small></p>
-                    <p class="card-text">{{d.description|truncatewords:10}}</p>
+                    <p class="card-text">{{d.description|truncatechars:40}}</p>
                     <p class="link-read-post"><a href="#">Подробнее</a></p>
                     <p><strong>Стоимость: {{d.price}} р.</strong></p>
                     <button type="button" class="btn btn-primary btn-lg">&nbsp&nbspВ корзину&nbsp&nbsp</button>

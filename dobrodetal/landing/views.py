@@ -14,13 +14,12 @@ def getout(request):
         print(out)
     return out
 
-
-menu = [{'id': 1, 'name': 'Каталог', 'slag': 'catalog'},
-        {'id': 2, 'name': 'Почему мы', 'slag': 'why_us'},
-        {'id': 3, 'name': 'Заказать', 'slag': 'order'},
-        {'id': 4, 'name': 'О нас', 'slag': 'about_us'},
-        {'id': 5, 'name': 'Отзывы', 'slag': 'reviews'},
-        {'id': 6, 'name': 'Контакты', 'slag': 'contacts'}
+menu = [{'id': 1, 'name': 'Каталог', 'slag': '#catalog'},
+        {'id': 2, 'name': 'Почему мы', 'slag': '#why_us'},
+        {'id': 3, 'name': 'Заказать', 'slag': '#order'},
+        {'id': 4, 'name': 'О нас', 'slag': '#about_us'},
+        {'id': 5, 'name': 'Отзывы', 'slag': '#reviews'},
+        {'id': 6, 'name': 'Контакты', 'slag': '#contacts'}
         ]
 
 
